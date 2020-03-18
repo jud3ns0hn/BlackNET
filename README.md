@@ -95,7 +95,16 @@ v3.0.0.1
 ````
 v3.5
  + Fixed Client Update Loop
- + New Method to blacklist client
+ + Fixed Upload & Execute Bug
+ + New Method to blacklist client using HWID
+ + Update BlackUpload to v2.0
+  + New Code
+  + Bug Fixes
+  + Better Security
+  + And More
+ + Cleaner Code
+ + Stable Connection
+ + Better Client Handling
  + Miner Code changes
  + Bugs Fixed
 ````
