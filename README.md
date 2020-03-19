@@ -96,16 +96,21 @@ v3.0.0.1
 v3.5
  + Fixed Client Update Loop
  + Fixed Upload & Execute Bug
- + New Method to blacklist client using HWID
+ + Better Blacklisting
+ + Added AJAX Support for Real-Time Control
+ + More Client Information
+   + Client Version
+   + Client HWID
  + Update BlackUpload to v2.0
   + New Code
   + Bug Fixes
   + Better Security
   + And More
- + Cleaner Code
+ + Better Performance
  + Stable Connection
  + Better Client Handling
- + Miner Code changes
+ + Better Speed
+ + Miner code changes
  + Bugs Fixed
 ````
 
