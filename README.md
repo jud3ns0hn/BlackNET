@@ -47,8 +47,8 @@ Developed By: Black.Hacker
  
 ## Requirements
 1. PHP >=  7.0
-  + cURL
-  + php_cURL
+    + cURL
+    + php_cURL
 2. NET Framework
     + Stub >= 2.0
     + Builder >= 4.0
