@@ -99,7 +99,6 @@ v3.5
  + Fixed Client Update Loop
  + Fixed Upload & Execute Bug
  + Better Blacklisting
- + Added AJAX Support for Real-Time Control
  + More Client Information
    + Client Version
    + Client HWID
