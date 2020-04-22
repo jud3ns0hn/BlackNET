@@ -96,6 +96,7 @@ v3.0.0.1
 ## Coming Soon
 ````
 v3.5
+ + Added Client Location Information
  + Fixed Client Update Loop
  + Fixed Upload & Execute Bug
  + Better Blacklisting
@@ -103,13 +104,14 @@ v3.5
    + Client Version
    + Client HWID
  + Update BlackUpload to v2.0
-  + New Code
-  + Bug Fixes
-  + Better Security
-  + And More
+   + New Code
+   + Bug Fixes
+   + Better Security
+   + And More
  + Better Performance
  + Stable Connection
  + Better Client Handling
+ + Fixed Encoding Issue
  + Better Speed
  + Miner code changes
  + Bugs Fixed
