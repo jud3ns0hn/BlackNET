@@ -67,8 +67,8 @@ function formatBytes($bytes, $precision = 2)
                 <?php endif;?>
               </div>
 
-              <?php if (file_exists("upload/$vicID/" . $utils->base64_url_encode($vicID) . ".png")): ?>
-                <a href="<?php echo ("upload/$vicID/" . $utils->base64_url_encode($vicID) . ".png"); ?>"><img class="img-fluid rounded border border-secondary" width="60%" height="60%" src="<?php echo ("upload/$vicID/" . $utils->base64_url_encode($vicID) . ".png"); ?>"></a>
+              <?php if (file_exists("upload/$vicID/" . $utils->base64_decode_url($vicID) . ".png")): ?>
+                <a href="<?php echo ("upload/$vicID/" . $utils->base64_decode_url($vicID) . ".png"); ?>"><img class="img-fluid rounded border border-secondary" width="60%" height="60%" src="<?php echo ("upload/$vicID/" . $utils->base64_decode_url($vicID) . ".png"); ?>"></a>
               <?php else: ?>
                 <img class="img-fluid rounded border border-secondary" src="imgs/placeholder.jpg" width="60%" height="60%">
               <?php endif;?>
