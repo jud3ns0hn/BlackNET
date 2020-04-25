@@ -86,11 +86,9 @@ Developed By: Black.Hacker
 ## What's New
 
 ````
-v3.0.0.1
-  Vuln: Auth.php bypass (fixed)
-  Bug: Typo => #54 ( fixed )
-  Edit: Removed Connection Password
-  Bug Fixes
+v3.1.0.0
+ + Fix Encoding Issue
+ + Bug Fixed
 ````
 
 ## Coming Soon
@@ -111,7 +109,6 @@ v3.5
  + Better Performance
  + Stable Connection
  + Better Client Handling
- + Fixed Encoding Issue
  + Better Speed
  + Miner code changes
  + Bugs Fixed
