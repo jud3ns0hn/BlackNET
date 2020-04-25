@@ -7,15 +7,15 @@ include_once 'classes/POST.php';
 <html lang="en">
 
 <head>
-  <?php include_once 'components/meta.php'; ?>
+  <?php include_once 'components/meta.php';?>
   <title>BlackNET - Execute Command</title>
-  <?php include_once 'components/css.php'; ?>
+  <?php include_once 'components/css.php';?>
   <style type="text/css">
   </style>
 </head>
 
 <body id="page-top">
-  <?php include_once 'components/header.php'; ?>
+  <?php include_once 'components/header.php';?>
   <div id="wrapper">
     <div id="content-wrapper">
       <div class="container-fluid">
@@ -32,7 +32,7 @@ include_once 'classes/POST.php';
           <div class="card-body">
             <form method='POST'>
               <div class="container container-special">
-                <?php include_once 'components/commandController.php'; ?>
+                <?php include_once 'components/commandController.php';?>
               </div>
             </form>
           </div>
@@ -41,9 +41,9 @@ include_once 'classes/POST.php';
     </div>
   </div>
 
-  <?php include_once 'components/footer.php'; ?>
+  <?php include_once 'components/footer.php';?>
 
-  <?php include_once 'components/js.php'; ?>
+  <?php include_once 'components/js.php';?>
 
 </body>
 

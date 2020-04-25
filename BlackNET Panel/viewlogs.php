@@ -10,16 +10,16 @@ $logs = $clients->getLogs();
 <html>
 
 <head>
-  <?php include_once 'components/meta.php'; ?>
+  <?php include_once 'components/meta.php';?>
   <title>BlackNET - View Logs</title>
-  <?php include_once 'components/css.php'; ?>
+  <?php include_once 'components/css.php';?>
   <link href="asset/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
   <link href="asset/vendor/responsive/css/responsive.dataTables.css" rel="stylesheet">
   <link href="asset/vendor/responsive/css/responsive.bootstrap4.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
-  <?php include_once 'components/header.php'; ?>
+  <?php include_once 'components/header.php';?>
   <div id="wrapper">
     <div id="content-wrapper">
       <div class="container-fluid">
@@ -36,26 +36,26 @@ $logs = $clients->getLogs();
               System Logs</div>
             <div class="card-body">
               <div class="container text-center">
-                <?php if (isset($_GET['msg'])) : ?>
-                  <?php if ($_GET['msg'] == "yes") : ?>
+                <?php if (isset($_GET['msg'])): ?>
+                  <?php if ($_GET['msg'] == "yes"): ?>
                     <div class="container container-special">
                       <div class="alert alert-success">
                         <span class="fas fa-check-circle"></span> Logs has been removed.
                       </div>
                     </div>
-                  <?php elseif ($_GET['msg'] == "csrf") : ?>
+                  <?php elseif ($_GET['msg'] == "csrf"): ?>
                     <div class="alert alert-danger">
                       <span class="fa fa-times-circle"></span> CSRF Token is invalid.
                     </div>
-                  <?php endif; ?>
-                <?php endif; ?>
+                  <?php endif;?>
+                <?php endif;?>
                 <div class="table-responsive pt-4 pb-4">
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                       <tr>
                         <th><input <?php if (empty($logs)) {
-                                      echo "disabled";
-                                    } ?> type="checkbox" name="select-all" id="select-all"></th>
+    echo "disabled";
+}?> type="checkbox" name="select-all" id="select-all"></th>
                         <th>Time</th>
                         <th>Victim ID</th>
                         <th>Message</th>
@@ -63,7 +63,7 @@ $logs = $clients->getLogs();
                       </tr>
                     </thead>
                     <tbody>
-                      <?php foreach ($logs as $log) : ?>
+                      <?php foreach ($logs as $log): ?>
                         <tr>
                           <td><input type="checkbox" id="log[]" name="log[]" value="<?php echo $log->id; ?>"></td>
                           <td><?php echo $log->time; ?></td>
@@ -72,17 +72,17 @@ $logs = $clients->getLogs();
 
                           <td><?php echo $log->message; ?></td>
 
-                          <?php if ($log->type == "Succ") : ?>
+                          <?php if ($log->type == "Succ"): ?>
                             <td>
                               <div><span class="fas fa-check text-success"></span></div>
                             </td>
-                          <?php else : ?>
+                          <?php else: ?>
                             <td>
                               <div><span class="fas fa-times text-danger"></span></div>
                             </td>
-                          <?php endif; ?>
+                          <?php endif;?>
                         </tr>
-                      <?php endforeach; ?>
+                      <?php endforeach;?>
                     </tbody>
                   </table>
                 </div>
@@ -96,9 +96,9 @@ $logs = $clients->getLogs();
       </div>
     </div>
   </div>
-  <?php include_once 'components/footer.php'; ?>
+  <?php include_once 'components/footer.php';?>
 
-  <?php include_once 'components/js.php'; ?>
+  <?php include_once 'components/js.php';?>
 
   <script src="asset/vendor/datatables/jquery.dataTables.js"></script>
   <script src="asset/vendor/datatables/dataTables.bootstrap4.js"></script>

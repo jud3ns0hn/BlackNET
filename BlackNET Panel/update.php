@@ -5,29 +5,27 @@ include_once 'classes/Utils.php';
 
 $utils = new Utils;
 
-$current_version = "v3.0.0.1";
+$current_version = "v3.1.0.0";
 
 $update = new Update;
 
 if (isset($_POST['start_update'])) {
-  $sql = [
-    $update->drop_column("settings", "c_password")
-  ];
+    $sql = [];
 
-  foreach ($sql as $query) {
-    $msg = $update->execute($query);
-  }
+    foreach ($sql as $query) {
+        $msg = $update->execute($query);
+    }
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <?php include_once 'components/meta.php'; ?>
+  <?php include_once 'components/meta.php';?>
 
   <title>BlackNET - Update Panel</title>
 
-  <?php include_once 'components/css.php'; ?>
+  <?php include_once 'components/css.php';?>
 </head>
 
 <body class="bg-dark">
@@ -36,13 +34,13 @@ if (isset($_POST['start_update'])) {
       <div class="card-header">Update System</div>
       <div class="card-body">
         <form method="POST">
-          <?php if (isset($msg)) : ?>
-            <?php if ($msg == true) : ?>
+          <?php if (isset($msg)): ?>
+            <?php if ($msg == true): ?>
               <div class="alert alert-success"><span class="fas fa-check-circle"></span> Panel has been updated.</div>
-            <?php else : ?>
+            <?php else: ?>
               <div class="alert alert-danger"><span class="fas fa-times-circle"></span> Panel is up to date.</div>
-            <?php endif; ?>
-          <?php endif; ?>
+            <?php endif;?>
+          <?php endif;?>
           <div class="alert alert-primary text-center border-primary pb-0">
             <p class="lead h2">
               <b>this page is going to update BlackNET current settings</b>
@@ -56,7 +54,7 @@ if (isset($_POST['start_update'])) {
     </div>
   </div>
 
-  <?php include_once 'components/js.php'; ?>
+  <?php include_once 'components/js.php';?>
 
 </body>
 

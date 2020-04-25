@@ -11,25 +11,25 @@ $utils = new Utils;
 $key = $utils->sanitize($_GET['key']);
 $updatePassword = new ResetPassword;
 if ($updatePassword->isExist($key) == "Key Exist") {
-  $data = $updatePassword->getUserAssignToToken($key);
-  $question = $updatePassword->isQuestionEnabled($data->username);
-  $answered = isset($_GET['answered']) ? $utils->sanitize($_GET['answered']) : "false";
-  if ($question != false) {
-    if ($answered != "true") {
-      $utils->redirect("question.php?username=$data->username&key=$key");
+    $data = $updatePassword->getUserAssignToToken($key);
+    $question = $updatePassword->isQuestionEnabled($data->username);
+    $answered = isset($_GET['answered']) ? $utils->sanitize($_GET['answered']) : "false";
+    if ($question != false) {
+        if ($answered != "true") {
+            $utils->redirect("question.php?username=$data->username&key=$key");
+        }
     }
-  }
-  if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $Password = $utils->sanitize($_POST['password']);
-    $confirmPassword = $utils->sanitize($_POST['confirmPassword']);
-    if ($Password == $confirmPassword) {
-      $msg  = $updatePassword->updatePassword($key, $data->username, $_POST['password']);
-    } else {
-      $err = "Password confirm is incorrect";
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        $Password = $utils->sanitize($_POST['password']);
+        $confirmPassword = $utils->sanitize($_POST['confirmPassword']);
+        if ($Password == $confirmPassword) {
+            $msg = $updatePassword->updatePassword($key, $data->username, $_POST['password']);
+        } else {
+            $err = "Password confirm is incorrect";
+        }
     }
-  }
 } else {
-  $utils->redirect("expire.php");
+    $utils->redirect("expire.php");
 }
 session_destroy();
 ?>
@@ -37,9 +37,9 @@ session_destroy();
 <html lang="en">
 
 <head>
-  <?php include_once 'components/meta.php'; ?>
+  <?php include_once 'components/meta.php';?>
   <title>BlackNET - Reset Password</title>
-  <?php include_once 'components/css.php'; ?>
+  <?php include_once 'components/css.php';?>
 
 </head>
 
@@ -49,16 +49,16 @@ session_destroy();
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Reset Password</div>
       <div class="card-body">
-        <?php if (isset($msg)) : ?>
+        <?php if (isset($msg)): ?>
           <div class="alert alert-primary" role="alert">
             <span class="fas fa-info-circle"></span> <?php echo $msg ?>
           </div>
-        <?php endif; ?>
-        <?php if (isset($err)) : ?>
+        <?php endif;?>
+        <?php if (isset($err)): ?>
           <div class="alert alert-danger" role="alert">
             <span class="fas fa-times-circle"></span> <?php echo $err ?>
           </div>
-        <?php endif; ?>
+        <?php endif;?>
         <div class="text-center mb-4">
 
           <h4>Reset Password</h4>
@@ -90,7 +90,7 @@ session_destroy();
   </div>
 
   <!-- Bootstrap core JavaScript-->
-  <?php include_once 'components/js.php'; ?>
+  <?php include_once 'components/js.php';?>
 
 </body>
 

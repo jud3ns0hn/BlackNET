@@ -268,7 +268,7 @@ function Send($USER, $Command)
         $client = new Clients;
         $utils = new Utils;
         foreach (json_decode($USER) as $clientID) {
-            $client->updateCommands($utils->sanitize($clientID), base64_encode($Command));
+            $client->updateCommands($utils->sanitize($clientID), $utils->base64_encode_url($Command));
         }
     } catch (Exception $e) {
         die($e->getMessage());

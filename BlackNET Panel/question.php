@@ -10,26 +10,26 @@ $utils = new Utils;
 $key = isset($_GET['key']) ? $utils->sanitize($_GET['key']) : null;
 $updatePassword = new ResetPassword;
 if ($updatePassword->isExist($key) == "Key Exist") {
-  $data = $updatePassword->getUserAssignToToken($key);
-  $question = $updatePassword->getQuestionByUser($data->username);
-  if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    if ($utils->sanitize($_POST['answer']) == $question->answer) {
-      $utils->redirect("reset.php?key=$key&answered=true");
-    } else {
-      $msg = "Answer is incorrect";
+    $data = $updatePassword->getUserAssignToToken($key);
+    $question = $updatePassword->getQuestionByUser($data->username);
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        if ($utils->sanitize($_POST['answer']) == $question->answer) {
+            $utils->redirect("reset.php?key=$key&answered=true");
+        } else {
+            $msg = "Answer is incorrect";
+        }
     }
-  }
 } else {
-  $utils->redirect("expire.php");
+    $utils->redirect("expire.php");
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <?php include_once 'components/meta.php'; ?>
+  <?php include_once 'components/meta.php';?>
   <title>BlackNET - Reset Password</title>
-  <?php include_once 'components/css.php'; ?>
+  <?php include_once 'components/css.php';?>
 
 </head>
 
@@ -39,11 +39,11 @@ if ($updatePassword->isExist($key) == "Key Exist") {
     <div class="card card-login mx-auto mt-5">
       <div class="card-header">Security Question</div>
       <div class="card-body">
-        <?php if (isset($msg)) : ?>
+        <?php if (isset($msg)): ?>
           <div class="alert alert-danger" role="alert">
             <span class="fas fa-times-circle"></span> <?php echo $msg ?>
           </div>
-        <?php endif; ?>
+        <?php endif;?>
         <div class="text-center mb-4">
 
           <h4>Security Question</h4>
@@ -66,7 +66,7 @@ if ($updatePassword->isExist($key) == "Key Exist") {
     </div>
   </div>
 
-  <?php include_once 'components/js.php'; ?>
+  <?php include_once 'components/js.php';?>
 
 </body>
 

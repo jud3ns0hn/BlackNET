@@ -13,14 +13,14 @@ $getSettings = $settings->getSettings(1);
 <html lang="en">
 
 <head>
-  <?php include_once 'components/meta.php'; ?>
+  <?php include_once 'components/meta.php';?>
   <title>BlackNET - Network Settings</title>
-  <?php include_once 'components/css.php'; ?>
+  <?php include_once 'components/css.php';?>
   <link href="asset/css/bootstrap-switch.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
-  <?php include_once 'components/header.php'; ?>
+  <?php include_once 'components/header.php';?>
   <div id="wrapper">
     <div id="content-wrapper">
       <div class="container-fluid">
@@ -37,28 +37,28 @@ $getSettings = $settings->getSettings(1);
             <form id="Form1" name="Form1" method="POST" action="includes/updateSettings.php">
 
               <div class="container container-special">
-                <?php if (isset($_GET['msg']) && $_GET['msg'] === "yes") : ?>
+                <?php if (isset($_GET['msg']) && $_GET['msg'] === "yes"): ?>
                   <div class="alert alert-success" role="alert">
                     <span class="fa fa-check-circle"></span> Settings Has Been Updated
                   </div>
-                <?php endif; ?>
+                <?php endif;?>
 
-                <?php if (isset($_GET['msg']) && $_GET['msg'] === "csrf") : ?>
+                <?php if (isset($_GET['msg']) && $_GET['msg'] === "csrf"): ?>
                   <div class="alert alert-danger">
                     <span class="fa fa-times-circle"></span> CSRF Token is invalid.
                   </div>
-                <?php endif; ?>
+                <?php endif;?>
               </div>
               <div class="container container-special">
                 <div class="align-content-center justify-content-center">
-                  <input type="text" name="csrf" id="csrf" hidden="" value="<?php echo ($utils->sanitize($_SESSION['csrf']));  ?>">
+                  <input type="text" name="csrf" id="csrf" hidden="" value="<?php echo ($utils->sanitize($_SESSION['csrf'])); ?>">
                   <input hidden="" value="<?php echo $getSettings->id ?>" name="id" id="id">
                   <div class="form-group">
                     <div class="form-group">
                       <label for="switch-state">Panel Status: </label>
                       <input class="bootstrap-switch" id="panel-state" name="panel-state" type="checkbox" data-size="small" <?php if ($getSettings->panel_status == "on") {
-                                                                                                                              echo 'checked';
-                                                                                                                            } ?>>
+    echo 'checked';
+}?>>
                     </div>
                   </div>
                   <hr>
@@ -66,8 +66,8 @@ $getSettings = $settings->getSettings(1);
                     <div class="form-group">
                       <label for="switch-state">Enable reCAPTCHA: </label>
                       <input class="bootstrap-switch" id="status-state" name="status-state" type="checkbox" data-size="small" <?php if ($getSettings->recaptchastatus == "on") {
-                                                                                                                                echo 'checked';
-                                                                                                                              } ?>>
+    echo 'checked';
+}?>>
                     </div>
                   </div>
 
@@ -94,14 +94,14 @@ $getSettings = $settings->getSettings(1);
 
             <form id="Form2" name="Form2" method="POST" action="includes/updateSettings.php" class="pt-2">
               <div class="container container-special" class="align-content-center justify-content-center">
-                <input type="text" name="csrf" id="csrf" hidden="" value="<?php echo ($utils->sanitize($_SESSION['csrf']));  ?>">
+                <input type="text" name="csrf" id="csrf" hidden="" value="<?php echo ($utils->sanitize($_SESSION['csrf'])); ?>">
                 <input hidden="" value="<?php echo $getSMTP->id ?>" name="id" id="id">
                 <div class="form-group">
                   <div class="form-group">
                     <label for="switch-state">Enable SMTP: </label>
                     <input class="bootstrap-switch" id="smtp-state" name="smtp-state" type="checkbox" data-size="small" <?php if ($getSMTP->status == "on") {
-                                                                                                                          echo 'checked';
-                                                                                                                        } ?>>
+    echo 'checked';
+}?>>
                   </div>
                 </div>
 
@@ -130,14 +130,14 @@ $getSettings = $settings->getSettings(1);
                   <select label="Select a Security type" name="security" id="security" class="form-control">
                     <option>Select a Security type</option>
                     <option value="none" <?php if ($getSMTP->security_type == "none") {
-                                            echo "selected";
-                                          } ?>>None</option>
+    echo "selected";
+}?>>None</option>
                     <option value="ssl" <?php if ($getSMTP->security_type == "ssl") {
-                                          echo "selected";
-                                        } ?>>SSL</option>
+    echo "selected";
+}?>>SSL</option>
                     <option value="tls" <?php if ($getSMTP->security_type == "tls") {
-                                          echo "selected";
-                                        } ?>>TLS</option>
+    echo "selected";
+}?>>TLS</option>
                   </select>
                 </div>
 
@@ -157,9 +157,9 @@ $getSettings = $settings->getSettings(1);
     </div>
   </div>
 
-  <?php include_once 'components/footer.php'; ?>
+  <?php include_once 'components/footer.php';?>
 
-  <?php include_once 'components/js.php'; ?>
+  <?php include_once 'components/js.php';?>
   <script src="asset/js/bootstrap-switch/main.js"></script>
   <script src="asset/js/bootstrap-switch/highlight.js"></script>
   <script src="asset/js/bootstrap-switch/bootstrap-switch.js"></script>

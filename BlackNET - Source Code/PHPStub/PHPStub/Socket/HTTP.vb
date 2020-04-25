@@ -16,12 +16,28 @@ Namespace HTTPSocket
 
         Public Function ENB(ByRef s As String) As String
             Dim byt As Byte() = System.Text.Encoding.UTF8.GetBytes(s)
-            ENB = Convert.ToBase64String(byt)
+            Dim output = Convert.ToBase64String(byt)
+            output = output.Split("=")(0)
+            output = output.Replace("+", "-")
+            output = output.Replace("/", "_")
+            ENB = output
         End Function
         Public Function DEB(ByRef s As String) As String
-            Dim b As Byte() = Convert.FromBase64String(s)
-            DEB = System.Text.Encoding.UTF8.GetString(b)
+            Dim output = s
+            output = output.Replace("-", "+")
+            output = output.Replace("_", "/")
+
+            Select Case output.Length Mod 4
+                Case 0
+                Case 2
+                    output += "=="
+                Case 3
+                    output += "="
+            End Select
+            Dim converted = Convert.FromBase64String(output)
+            DEB = System.Text.Encoding.UTF8.GetString(converted)
         End Function
+
         Public Function _GET(ByVal request As String)
             Try
                 Return Socket.DownloadString(Host & "/" & request)

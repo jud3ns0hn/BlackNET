@@ -6,7 +6,7 @@ include_once 'classes/Utils.php';
 $utils = new Utils;
 
 if (isset($_GET['id'])) {
-	$client = new Clients;
-	$command = $client->getCommand($utils->sanitize(base64_decode($_GET['id'])));
-	echo $command->command;
+    $client = new Clients;
+    $command = $client->getCommand($utils->sanitize($utils->base64_decode_url($_GET['id'])));
+    echo $command->command;
 }

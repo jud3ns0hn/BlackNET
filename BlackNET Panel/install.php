@@ -1,32 +1,32 @@
 <?php
 include_once 'classes/Database.php';
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-  $query = '';
-  $sqlScript = file('blacknet.sql');
-  $datbase = new Database;
-  $pdo = $datbase->Connect();
-  foreach ($sqlScript as $line) {
-    $startWith = substr(trim($line), 0, 2);
-    $endWith = substr(trim($line), -1, 1);
-    if (empty($line) || $startWith == '--' || $startWith == '/*' || $startWith == '//') {
-      continue;
+    $query = '';
+    $sqlScript = file('blacknet.sql');
+    $datbase = new Database;
+    $pdo = $datbase->Connect();
+    foreach ($sqlScript as $line) {
+        $startWith = substr(trim($line), 0, 2);
+        $endWith = substr(trim($line), -1, 1);
+        if (empty($line) || $startWith == '--' || $startWith == '/*' || $startWith == '//') {
+            continue;
+        }
+        $query = $query . $line;
+        if ($endWith == ';') {
+            $stmt = $pdo->query($query) or die('Problem in executing the SQL query <b>' . $query . '</b></div>');
+            $query = '';
+        }
     }
-    $query = $query . $line;
-    if ($endWith == ';') {
-      $stmt = $pdo->query($query) or die('Problem in executing the SQL query <b>' . $query . '</b></div>');
-      $query = '';
-    }
-  }
-  $msg = 'SQL file imported successfully';
+    $msg = 'SQL file imported successfully';
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <?php include_once 'components/meta.php'; ?>
+  <?php include_once 'components/meta.php';?>
   <title>BlackNET - Installation</title>
-  <?php include_once 'components/css.php'; ?>
+  <?php include_once 'components/css.php';?>
 </head>
 
 <body class="bg-dark">
@@ -35,9 +35,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       <div class="card-header">Install</div>
       <div class="card-body">
         <form method="POST">
-          <?php if (isset($msg)) : ?>
+          <?php if (isset($msg)): ?>
             <div class="alert alert-success"><?php echo $msg ?></div>
-          <?php endif; ?>
+          <?php endif;?>
           <div class="alert alert-primary text-center border-primary">
             <p class="lead h2">
               <b>this page going to install BlackNET default settings<br>
@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       </div>
     </div>
   </div>
-  <?php include_once 'components/js.php'; ?>
+  <?php include_once 'components/js.php';?>
 
 </body>
 

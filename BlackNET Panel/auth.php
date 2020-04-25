@@ -13,47 +13,47 @@ $utils = new Utils;
 
 $auth = new Auth;
 
-$uniqeid = hash("sha256", base64_encode($utils->sanitize($_SERVER['HTTP_USER_AGENT'])));
+$uniqeid = hash("sha256", $utils->base64_encode_url($utils->sanitize($_SERVER['HTTP_USER_AGENT'])));
 
 if (checkUniqeId($uniqeid) == true) {
 
-  $_SESSION['OTP'] = "OK";
+    $_SESSION['OTP'] = "OK";
 
-  $utils->redirect("index.php");
+    $utils->redirect("index.php");
 }
 
 $g = new \Sonata\GoogleAuthenticator\GoogleAuthenticator();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $code = $_POST['AuthCode'];
-  $secret = $auth->getSecret($_SESSION['login_user']);
-  if ($g->checkCode($secret, $code)) {
-    if (isset($_POST['remberme'])) {
-      if (!isset($_COOKIE['2fa'])) {
-        setcookie('2fa', 'true', time() + 2592000);
-        setcookie('device_id', $uniqeid, time() + 2592000);
-      }
+    $code = $_POST['AuthCode'];
+    $secret = $auth->getSecret($_SESSION['login_user']);
+    if ($g->checkCode($secret, $code)) {
+        if (isset($_POST['remberme'])) {
+            if (!isset($_COOKIE['2fa'])) {
+                setcookie('2fa', 'true', time() + 2592000);
+                setcookie('device_id', $uniqeid, time() + 2592000);
+            }
+        }
+
+        $_SESSION['OTP'] = "OK";
+
+        $utils->redirect("index.php");
+    } else {
+        $error = "Verification code is incorrect!!";
     }
-
-    $_SESSION['OTP'] = "OK";
-
-    $utils->redirect("index.php");
-  } else {
-    $error = "Verification code is incorrect!!";
-  }
 }
 
 function checkUniqeId($uniqeid)
 {
-  if (isset($_COOKIE['2fa'])) {
-    if (isset($_COOKIE['device_id'])) {
-      if ($_COOKIE['device_id'] == $uniqeid) {
-        return true;
-      } else {
-        return false;
-      }
+    if (isset($_COOKIE['2fa'])) {
+        if (isset($_COOKIE['device_id'])) {
+            if ($_COOKIE['device_id'] == $uniqeid) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
-  }
 }
 
 ?>
@@ -61,11 +61,11 @@ function checkUniqeId($uniqeid)
 <html lang="en">
 
 <head>
-  <?php include_once 'components/meta.php'; ?>
+  <?php include_once 'components/meta.php';?>
 
   <title>BlackNET - 2 Factor Authentication</title>
 
-  <?php include_once 'components/css.php'; ?>
+  <?php include_once 'components/css.php';?>
 </head>
 
 <body class="bg-dark">
@@ -74,11 +74,11 @@ function checkUniqeId($uniqeid)
       <div class="card-header">Login</div>
       <div class="card-body">
         <form method="POST">
-          <?php if (isset($error)) : ?>
+          <?php if (isset($error)): ?>
             <div class="alert alert-danger"><span class="fa fa-times-circle"></span> <?php echo $error; ?></div>
-          <?php else : ?>
+          <?php else: ?>
             <div class="alert alert-primary"><span class="fa fa-info-circle"></span> Please open the app for the code.</div>
-          <?php endif; ?>
+          <?php endif;?>
           <div class="form-group">
             <div class="form-label-group">
               <input type="text" id="AuthCode" pattern="[0-9]{6}" name="AuthCode" class="form-control" placeholder="Verification Code" required="required">
@@ -97,7 +97,7 @@ function checkUniqeId($uniqeid)
     </div>
   </div>
 
-  <?php include_once 'components/js.php'; ?>
+  <?php include_once 'components/js.php';?>
 
 </body>
 

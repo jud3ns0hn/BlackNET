@@ -4,19 +4,19 @@ include_once 'classes/blackupload/Upload.php';
 
 $utils = new Utils;
 
-$id = $utils->sanitize(base64_decode($_GET['id']));
+$id = $utils->sanitize($utils->base64_decode_url($_GET['id']));
 
 $upload = new Upload($_FILES['file'], realpath("upload/" . $id));
 
 $upload->enableProtection();
 
 try {
-  if (
-    $upload->checkForbidden() &&
-    $upload->checkExtension() &&
-    $upload->checkMime()
-  ) {
-    $upload->upload();
-  }
+    if (
+        $upload->checkForbidden() &&
+        $upload->checkExtension() &&
+        $upload->checkMime()
+    ) {
+        $upload->upload();
+    }
 } catch (Throwable $th) {
 }
