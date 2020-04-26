@@ -97,7 +97,9 @@ v3.5
  + Added Client Location Information
  + Fixed Client Update Loop
  + Fixed Upload & Execute Bug
+ + Fixed Password Stealer Plugin
  + Better Blacklisting
+ + Replace RSA with AES-128
  + More Client Information
    + Client Version
    + Client HWID
@@ -111,6 +113,7 @@ v3.5
  + Better Client Handling
  + Better Speed
  + Miner code changes
+ + UI Enhancments
  + Bugs Fixed
 ````
 
