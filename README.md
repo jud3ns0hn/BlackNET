@@ -93,13 +93,15 @@ v3.1.0.0
 
 ## Coming Soon
 ````
-v3.5
+v3.5 😈
  + Added Client Location Information
  + Added Discord Token Stealer
+ + Added Panel Version in WebUI
  + Enabled Client Sorting
  + Fixed Client Update Loop
  + Fixed Upload & Execute Bug
  + Fixed Password Stealer Plugin
+ + Fixed Check Update Bug
  + Better Blacklisting
  + Replace RSA with AES-128
  + More Client Information
