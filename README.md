@@ -95,6 +95,7 @@ v3.1.0.0
 ````
 v3.5
  + Added Client Location Information
+ + Added Discord Token Stealer
  + Enabled Client Sorting
  + Fixed Client Update Loop
  + Fixed Upload & Execute Bug
