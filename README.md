@@ -97,6 +97,8 @@ v3.5 😈
  + Added Client Location Information
  + Added Discord Token Stealer
  + Added Panel Version in WebUI
+ + Added Send Spam Email Function
+ + Added Chrome History Stealer
  + Enabled Client Sorting
  + Fixed Client Update Loop
  + Fixed Upload & Execute Bug
@@ -133,7 +135,6 @@ v3.5 😈
 i will review it in 1 - 5 days then i will merge it with the master branch
 
 ## Thanks to
-- Underc0de
 - KFC
 - Yck1509
 - NYAN CAT
