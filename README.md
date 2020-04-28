@@ -102,8 +102,11 @@ v3.5 😈
  + Fixed Upload & Execute Bug
  + Fixed Password Stealer Plugin
  + Fixed Check Update Bug
+ + Fixed DDoS Bug
  + Better Blacklisting
+ + Better TEMP Cleaner
  + Replace RSA with AES-128
+ + Improved HTTP Socket
  + More Client Information
    + Client Version
    + Client HWID
@@ -117,7 +120,8 @@ v3.5 😈
  + Better Client Handling
  + Better Speed
  + Miner code changes
- + UI Enhancments
+ + Security Enhancements
+ + UI Enhancements
  + Bugs Fixed
 ````
 
