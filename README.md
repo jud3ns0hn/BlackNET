@@ -144,17 +144,6 @@ i will review it in 1 - 5 days then i will merge it with the master branch
 ## Python Edition
 [BlackHacker511/BlackNET-Python](http://github.com/BlackHacker511/BlackNET-Python)
 
-## Donate
-<a target="_blank" href="http://paypal.me/BlackHacker1"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" /></a>
-
-BTC: 1DXMk3Dm2GXUsLe9ZFmNNs9jxa2qNX9GfW
-
-<a href="https://ko-fi.com/blackhacker"><img src="https://3.top4top.net/p_1460d94yj1.png" width="217" hieght="51" /><a>
-<a href="http://www.patreon.com/blackhacker511"><img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" width="217" hieght="51" /><a>
-<a href="https://www.buymeacoffee.com/blackhacker511" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg" alt="Buy Me A Coffee" ></a>
- 
- <a href="https://opencollective.com/blacknet#support"><img src="https://opencollective.com/blacknet/sponsors.svg" /></a>
-
 ## LEGAL DISCLAIMER PLEASE READ!
 ##### I, the creator and all those associated with the development and production of this program are not responsible for any actions and or damages caused by this software. You bear the full responsibility of your actions and acknowledge that this software was created for educational purposes only. This software's intended purpose is NOT to be used maliciously, or on any system that you do not have own or have explicit permission to operate and use this program on. By using this software, you automatically agree to the above.
 
