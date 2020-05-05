@@ -99,6 +99,8 @@ v3.5 😈
  + Added Panel Version in WebUI
  + Added Send Spam Email Function
  + Added Chrome History Stealer
+ + Added New Job File
+   + remove.php | Remove Offline Clients
  + Enabled Client Sorting
  + Fixed Client Update Loop
  + Fixed Upload & Execute Bug
